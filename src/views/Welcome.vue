@@ -1,25 +1,19 @@
 <template>
-  <div>
-    welcome
-  </div>
+  <div>welcome</div>
 </template>
 
 <script>
 export default {
-  name: 'Welcome',
+  name: 'WelcomePage',
   data() {
-    return {
-      
-    }
+    return {};
   },
   watch: {},
   computed: {},
   methods: {},
   created() {},
-  mounted() {}
-}
+  mounted() {},
+};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
