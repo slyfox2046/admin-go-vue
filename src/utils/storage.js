@@ -5,8 +5,10 @@ export default {
   getStorage() {
     return JSON.parse(window.localStorage.getItem(process.env.VUE_APP_NAME_SPACE)  || '{}')
   },
-  setStorage(key,val) {
-    window.localStorage.setItem(process.env.VUE_APP_NAME_SPACE, JSON.stringify(val))
+  setItem(key, val) {
+    let storage = this.getStorage()
+    storage[key]= val
+    window.localStorage.setItem(process.env.VUE_APP_NAME_SPACE, JSON.stringify(storage))
   },
   getItem(key) {
     return this.getStorage()[key]

@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "vue-cli-service serve --mode dev",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "api": "cd /Volumes/ssd/slyfox/600_workspace/slycode/go/admin-go-api && go run main.go"
   },
   "dependencies": {
     "@riophae/vue-treeselect": "^0.4.0",
