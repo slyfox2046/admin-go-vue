@@ -17,19 +17,30 @@ service.interceptors.request.use(req => {
 })
 
 // 响应拦截
-service.interceptors.response.use(req => {
-  const { code, data, message } = req.data
+service.interceptors.response.use(res => {
+  const { code, data, message } = res.data
   if (code === 403) {
     Message.error(message)
     setTimeout(() => {
       router.push('/login')
     }, 1500)
+  } else if (code === 406) {
+    Message.error(message)
+    setTimeout(() => {
+      router.push('/login')
+    }, 1500)
   } else {
-    if (code === 406) {
-      Message.error(message)
-      setTimeout(() => {
-        router.push('/login')
-      }, 1500)
-    }
+    return res;
   }
 })
+// 请求核心函数
+function request(options) {
+  options.method = options.method || 'get'
+  if (options.method.toLowerCase() === 'get') {
+    options.params = options.data
+  }
+  service.default.baseURL = process.env.VUE_APP_BASE_API
+  return service(options)
+}
+
+export default request
