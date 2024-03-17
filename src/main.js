@@ -12,7 +12,7 @@ import './assets/css/global.css'
 
 Vue.prototype.$store = store
 Vue.prototype.$request = request
-Vue.prototype.$storeage = storage
+Vue.prototype.$storage = storage
 Vue.prototype.$api = api
 
 Vue.use(ElementUI)

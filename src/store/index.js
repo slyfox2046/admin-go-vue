@@ -9,6 +9,7 @@ const store = new Vuex.Store({
   token: '' || storage.getItem('token'),
   leftMenuList: '' || storage.getItem('leftMenuList'),
   permissionList: '' || storage.getItem('permissionList'),
+  activePath: '' || storage.getItem('activePath'),
   mutations,
 })
 export default store
