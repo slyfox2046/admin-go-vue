@@ -11,7 +11,7 @@
           <el-input type="password" v-model="loginForm.password" placeholder="密码" prefix-icon="el-icon-key"></el-input>
         </el-form-item>
         <el-form-item label="" prop="image">
-          <el-input v-model="loginForm.image" style="width: 240px; float: left" maxlength="6" placeholder="验证码" prefix-icon="el-icon-view"></el-input>
+          <el-input v-model="loginForm.image" style="width: 240px; float: left" maxlength="6" placeholder="验证码" prefix-icon="el-icon-view" @keyup.enter.native="loginBtn"></el-input>
           <el-image class="captchaImg" style="width: 150px; float: right; cursor: pointer" @click="getCaptcha" :src="image" />
         </el-form-item>
         <el-form-item>

@@ -85,4 +85,55 @@ export default {
     })
   },
   // # end Post
+
+  // # start Dept
+  queryDeptList(params) {
+    return request({
+      url: '/dept/list',
+      method: 'get',
+      data: params,
+    })
+  },
+  querysysDeptVoList() {
+    return request({
+      url: '/dept/vo/list',
+      method: 'get',
+    })
+  },
+  addDept(data) {
+    return request({
+      url: '/dept/add',
+      method: 'post',
+      data: data,
+    })
+  },
+  deleteDept(id) {
+    const data = {
+      id,
+    }
+    return request({
+      url: '/dept/delete',
+      method: 'delete',
+      data: data,
+    })
+  },
+  deptInfo(id) {
+    const data = {
+      id,
+    }
+    return request({
+      url: '/dept/info',
+      method: 'get',
+      data: data,
+    })
+  },
+  deptUpdate(data) {
+    return request({
+      url: '/dept/update',
+      method: 'put',
+      data: data,
+    })
+  },
+
+  // # end Dept
 }

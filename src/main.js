@@ -9,11 +9,13 @@ import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 import api from './api'
 import './assets/css/global.css'
+import handleTree from '@/utils/common'
 
 Vue.prototype.$store = store
 Vue.prototype.$request = request
 Vue.prototype.$storage = storage
 Vue.prototype.$api = api
+Vue.prototype.$handleTree = handleTree
 
 Vue.use(ElementUI)
 Vue.config.productionTip = false
