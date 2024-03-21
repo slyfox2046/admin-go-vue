@@ -180,7 +180,7 @@ export default {
       }
       this.title = '添加部门'
       this.open = true
-      const res = await this.$api.querysysDeptVoList()
+      const res = await this.$api.querySysDeptVoList()
       console.log('🚀 ~ handleAdd ~ res:', res)
       this.deptOptions = this.$handleTree.handleTree(res.data.data)
     },
@@ -193,7 +193,7 @@ export default {
       this.form = res.data.data
       this.open = true
       this.title = '修改部门'
-      const dept = await this.$api.querysysDeptVoList()
+      const dept = await this.$api.querySysDeptVoList()
       this.deptOptions = this.$handleTree.handleTree(dept.data.data)
       // getDept(row.id).then(response => {
       //   this.form = response.data;
