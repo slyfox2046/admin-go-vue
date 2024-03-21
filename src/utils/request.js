@@ -24,6 +24,11 @@ service.interceptors.response.use(res => {
   const { code, data, message } = res.data
   console.log(data)
   if (code !== 200) {
+    Message({
+      message: message || "Error",
+      type: "error",
+      duration: 5 * 1000
+    });
     if (code === 403) {
       Message.error(message)
       setTimeout(() => {
@@ -39,11 +44,21 @@ service.interceptors.response.use(res => {
         router.push('/login')
       }, 1500)
     }
-    Message.error(message)
+    // Message.error(message)
+    return Promise.reject(new Error(message||"Error"))
   } else {
     return res
   }
-})
+},error => {
+  console.log("err" + error); // for debug
+  Message({
+    message: error.message,
+    type: "error",
+    duration: 5 * 1000
+  });
+  return Promise.reject(error);
+}
+)
 // 请求核心函数
 function request(options) {
   options.method = options.method || 'get'

@@ -11,6 +11,7 @@ import api from './api'
 import './assets/css/global.css'
 import handleTree from '@/utils/common'
 
+ElementUI.Dialog.props.closeOnClickModal.default = false
 Vue.prototype.$store = store
 Vue.prototype.$request = request
 Vue.prototype.$storage = storage

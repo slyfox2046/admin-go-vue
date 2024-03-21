@@ -136,4 +136,139 @@ export default {
   },
 
   // # end Dept
+
+  // # start Menu
+  queryMenuList(params) {
+    return request({
+      url: '/menu/list',
+      method: 'get',
+      data: params,
+    })
+  },
+  querySysMenuVoList() {
+    return request({
+      url: '/menu/vo/list',
+      method: 'get',
+    })
+  },
+  addMenu(data) {
+    return request({
+      url: '/menu/add',
+      method: 'post',
+      data: data,
+    })
+  },
+  deleteMenu(id) {
+    const data = {
+      id,
+    }
+    return request({
+      url: '/menu/delete',
+      method: 'delete',
+      data: data,
+    })
+  },
+  menuInfo(id) {
+    const data = {
+      id,
+    }
+    return request({
+      url: '/menu/info',
+      method: 'get',
+      data: data,
+    })
+  },
+  menuUpdate(data) {
+    return request({
+      url: '/menu/update',
+      method: 'put',
+      data: data,
+    })
+  },
+
+  // # end Menu
+
+  // # start role
+
+  queryRoleList(params) {
+    return request({
+      url: '/role/list',
+      method: 'get',
+      data: params,
+    })
+  },
+  querysysRolevoLis() {
+    return request({
+      url: '/role/vo/list',
+      method: 'get',
+    })
+  },
+  addRole(data) {
+    return request({
+      url: '/role/add',
+      method: 'post',
+      data: data,
+    })
+  },
+  roleInfo(id) {
+    const data = {
+      id,
+    }
+    return request({
+      url: '/role/info',
+      method: 'get',
+      data: data,
+    })
+  },
+  updateRole(data) {
+    return request({
+      url: '/role/update',
+      method: 'put',
+      data: data,
+    })
+  },
+  deleteRole(id) {
+    const data = {
+      id,
+    }
+    return request({
+      url: '/role/delete',
+      method: 'delete',
+      data: data,
+    })
+  },
+  updateRoleStatus(id, status) {
+    const data = {
+      id,
+      status,
+    }
+    return request({
+      url: '/role/updateStatus',
+      method: 'put',
+      data: data,
+    })
+  },
+  QueryRoleMenuIdList(id) {
+    const data = {
+      id,
+    }
+    return request({
+      url: '/role/vo/idList',
+      method: 'get',
+      data: data,
+    })
+  },
+  AssignPermissions(id, menuIds) {
+    const data = {
+      id,
+      menuIds,
+    }
+    return request({
+      url: '/role/assignPermissions',
+      method: 'put',
+      data: data,
+    })
+  },
+
+  // # end role
 }
