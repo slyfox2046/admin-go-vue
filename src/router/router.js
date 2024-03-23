@@ -37,7 +37,7 @@ const router = new Router({
           meta: { tTitle: '首页' },
         },
         {
-          path: '/personnal',
+          path: '/personal',
           component: Personal,
           meta: { sTitle: '个人中心', tTitle: '个人信息' },
         },
