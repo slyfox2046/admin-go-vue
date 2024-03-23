@@ -103,6 +103,7 @@ sysLoginInfoList: [],
     },
     // 搜索
     handleQuery() {
+      this.queryParams.pageNum = 1;
       this.getLoginInfoList()
     },
     // 重置

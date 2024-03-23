@@ -178,6 +178,7 @@ export default {
     },
     // 搜索
     handleQuery() {
+      this.queryParams.pageNum = 1;
       this.getPostList()
     },
     // 重置

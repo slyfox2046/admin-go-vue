@@ -342,6 +342,7 @@ export default {
     },
     // 搜索
     handleQuery() {
+      this.queryParams.pageNum = 1;
       this.getAdminList()
     },
     // 重置
@@ -422,7 +423,7 @@ export default {
         if (!valid) return
         const { data: res } = await this.$api.adminUpdate(this.editForm)
         this.editDialogVisible = false
-        await this.getAdminList() 
+        await this.getAdminList()
         this.$message.success('修改用户成功')
       })
     },
