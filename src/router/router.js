@@ -68,13 +68,13 @@ const router = new Router({
         },
         {
           path: '/monitor/loginLog',
-          component: Operator,
-          meta: { sTitle: '个人中心', tTitle: '登录日志' },
+          component: LoginLog,
+          meta: { sTitle: '日志管理', tTitle: '登录日志' },
         },
         {
           path: '/monitor/operator',
-          component: LoginLog,
-          meta: { sTitle: '个人中心', tTitle: '操作日志' },
+          component: Operator,
+          meta: { sTitle: '日志管理', tTitle: '操作日志' },
         },
       ],
     },
