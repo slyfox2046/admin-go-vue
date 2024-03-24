@@ -11,6 +11,8 @@ import api from './api'
 import './assets/css/global.css'
 import handleTree from '@/utils/common'
 
+import AuthorityDirective from '@/permission/index.js'
+
 ElementUI.Dialog.props.closeOnClickModal.default = false
 Vue.prototype.$store = store
 Vue.prototype.$request = request
@@ -18,7 +20,7 @@ Vue.prototype.$storage = storage
 Vue.prototype.$api = api
 Vue.prototype.$handleTree = handleTree
 
-Vue.use(ElementUI)
+Vue.use(ElementUI).use(AuthorityDirective)
 Vue.config.productionTip = false
 
 new Vue({

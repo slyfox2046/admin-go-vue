@@ -44,7 +44,7 @@
     <!-- 按钮 -->
     <el-row :gutter="10" class="mb8">
       <el-col :span="1.5">
-        <el-button type="primary" plain icon="el-icon-plus" size="mini" @click="addDialogVisible = true">新增</el-button>
+        <el-button type="primary" plain icon="el-icon-plus" size="mini" @click="addDialogVisible = true" v-authority="['base:admin:add']">新增</el-button>
       </el-col>
     </el-row>
 
@@ -89,9 +89,9 @@
       <el-table-column label="个人简介" prop="note"> </el-table-column>
       <el-table-column label="更多操作" prop="" width="200" fixed="right">
         <template slot-scope="scope">
-          <el-button type="text" size="small" @click="showEditAdminDialog(scope.row.id)" icon="el-icon-edit">编辑</el-button>
-          <el-button type="text" size="small" @click="handleAdminDelete(scope.row)" icon="el-icon-delete">删除</el-button>
-          <el-button type="text" size="small" @click="handleResetPwd(scope.row)" icon="el-icon-setting">重置密码</el-button>
+          <el-button type="text" size="small" @click="showEditAdminDialog(scope.row.id)" icon="el-icon-edit"  v-authority="['base:admin:edit']">编辑</el-button>
+          <el-button type="text" size="small" @click="handleAdminDelete(scope.row)" icon="el-icon-delete"  v-authority="['base:admin:delete']">删除</el-button>
+          <el-button type="text" size="small" @click="handleResetPwd(scope.row)" icon="el-icon-setting"  v-authority="['base:admin:reset']">重置密码</el-button>
         </template>
       </el-table-column>
     </el-table>
