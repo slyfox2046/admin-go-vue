@@ -122,7 +122,7 @@
 
     <!-- 分配权限 -->
     <el-dialog title="分配权限" :visible.sync="setMenuDialogVisible" width="20%" @close="setRightDialogClosed">
-      <el-tree ref="treeRef" :data="menuList" node-key="id" :props="treeProps" :show-checkbox="true" :highlight-current="true" default-expand-all :default-checked-keys="defKeys"></el-tree>
+      <el-tree ref="treeRef" :data="menuList" node-key="id" :props="treeProps" :show-checkbox="true" :highlight-current="true" default-expand-all :default-checked-keys="defKeys" :check-strictly="true"></el-tree>
 
       <span slot="footer">
         <el-button type="primary" @click="allotMenus">确 定</el-button>
@@ -302,7 +302,7 @@ export default {
     async allotMenus() {
       const keys = [
         ...this.$refs.treeRef.getCheckedKeys(),
-        // ...this.$refs.treeRef.getHalfCheckedKeys() // 半选的不应该保存，恢复的时候半选的选上后会导致下级都选中
+        ...this.$refs.treeRef.getHalfCheckedKeys() // 半选的不应该保存，恢复的时候半选的选上后会导致下级都选中
       ]
       await this.$api.AssignPermissions(this.id, keys)
       this.$message.success('分配权限成功')
